@@ -1,4 +1,86 @@
-<section id="contacte">
-<h2>Contacte</h2>
-<p>Escriu-me a <a href="mailto:tu@exemple.com">tu@exemple.com</a></p>
-</section>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b16">
+  <meta name="description" content="Neon Snake: un clásico arcade minimalista. Juega en tu navegador.">
+  <title>Neon Snake — Arcade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Neon Snake inicio">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>PIXEL<span class="brand-accent">/</span>ARCADE</span>
+      </a>
+      <div class="status"><span class="status-dot"></span> SISTEMA ONLINE</div>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">ARCADE CLÁSICO · EDICIÓN NEÓN</p>
+      <h1>NEON <span>SNAKE</span></h1>
+      <p class="subtitle">Come. Crece. No choques.</p>
+    </section>
+
+    <section class="game-layout" aria-label="Juego Neon Snake">
+      <div class="game-panel">
+        <div class="panel-head">
+          <div><span class="label">PUNTUACIÓN</span><strong id="score">000</strong></div>
+          <div><span class="label">RÉCORD</span><strong id="best">000</strong></div>
+          <div class="level-box"><span class="label">NIVEL</span><strong id="level">01</strong></div>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="game" width="600" height="600" aria-label="Tablero de juego. Usa las flechas o WASD para moverte."></canvas>
+          <div class="overlay" id="overlay">
+            <div class="overlay-card">
+              <div class="play-symbol" id="overlay-symbol">▶</div>
+              <p class="overlay-kicker" id="overlay-kicker">¿PREPARADO?</p>
+              <h2 id="overlay-title">Empieza la partida</h2>
+              <p id="overlay-copy">Recoge los orbes y evita las paredes y tu propia cola.</p>
+              <button id="start-btn" class="primary-btn">JUGAR AHORA <span>↗</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="game-foot">
+          <span><i class="keycap">↑</i><i class="keycap">←</i><i class="keycap">↓</i><i class="keycap">→</i> MOVER</span>
+          <span><i class="keycap">SPACE</i> PAUSA</span>
+          <span class="live"><span class="status-dot"></span> <span id="game-state">LISTO</span></span>
+        </div>
+      </div>
+
+      <aside class="side-panel">
+        <div class="side-card objective">
+          <div class="card-icon">✦</div>
+          <p class="label">TU MISIÓN</p>
+          <h3>Busca el brillo.</h3>
+          <p>Cada orbe suma puntos y hace que tu serpiente crezca. ¿Hasta dónde llegarás?</p>
+          <div class="mini-rule"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="side-card controls-card">
+          <p class="label">CONTROLES</p>
+          <div class="control-row"><span>Movimiento</span><strong>W A S D / Flechas</strong></div>
+          <div class="control-row"><span>Pausa</span><strong>Espacio</strong></div>
+          <div class="control-row"><span>Reiniciar</span><strong>Enter</strong></div>
+        </div>
+        <div class="side-card tip-card">
+          <span class="tip-star">✳</span>
+          <div><p class="label">CONSEJO PRO</p><p>Anticípate a los giros. Tu cola siempre va un paso por detrás… hasta que deja de hacerlo.</p></div>
+        </div>
+      </aside>
+    </section>
+
+    <nav class="touch-controls" aria-label="Controles táctiles">
+      <button data-dir="up" aria-label="Arriba">↑</button>
+      <div><button data-dir="left" aria-label="Izquierda">←</button><button data-dir="down" aria-label="Abajo">↓</button><button data-dir="right" aria-label="Derecha">→</button></div>
+    </nav>
+
+    <footer>
+      <span>HECHO PARA JUGAR · SIN DESCARGAS</span>
+      <span>© <span id="year"></span> PIXEL/ARCADE</span>
+    </footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
